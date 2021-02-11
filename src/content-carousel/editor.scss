@@ -1,0 +1,113 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+ .wp-block-wwx-contentcarousel {
+    white-space: nowrap;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.is-selected .wp-block-wwx-contentcarousel{
+  overflow-x: scroll;
+}
+.wp-block-wwx-contentcarousel .block-editor-block-list__block .block-editor-block-list__layout{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.slides-visible-1 .wp-block{
+   flex-basis: 100%;
+   max-width: 100%;
+   min-width: 100%;
+ }
+.slides-visible-2 .wp-block{
+   flex-basis: 50%;
+   max-width: 50%;
+   min-width: 50%;
+ }
+ .slides-visible-3 .wp-block{
+   flex-basis: calc( 100%/3);
+   max-width: calc( 100%/3);
+   min-width: calc( 100%/3);
+}
+.slides-visible-4 .wp-block{
+   flex-basis: 25%;
+   max-width: 25%;
+   min-width: 25%;
+ }
+ .slides-visible-5 .wp-block{
+    flex-basis: 20%;
+    max-width: 20%;
+    min-width: 20%;
+}
+.slides-visible-6 .wp-block{
+  flex-basis: calc( 100%/6);
+  max-width: calc( 100%/6);
+  min-width: calc( 100%/6);
+}
+.slides-visible-7 .wp-block{
+   flex-basis: calc( 100%/7);
+   max-width: calc( 100%/7);
+   min-width: calc( 100%/7);
+}
+.slides-visible-8 .wp-block{
+   flex-basis: calc( 100%/8);
+   max-width: calc( 100%/8);
+   min-width: calc( 100%/8);
+}
+.slides-visible-9 .wp-block{
+   flex-basis: calc( 100%/9);
+   max-width: calc( 100%/9);
+   min-width: calc( 100%/9);
+}
+.slides-visible-10 .wp-block{
+   flex-basis: 10%;
+   max-width: 10%;
+   min-width: 10%;
+}
+.slides-visible-11 .wp-block{
+   flex-basis: calc( 100%/11);
+   max-width: calc( 100%/11);
+   min-width: calc( 100%/11);
+}
+.slides-visible-12 .wp-block{
+   flex-basis: calc( 100%/12);
+   max-width: calc( 100%/12);
+   min-width: calc( 100%/12);
+}
+.wp-block-wwx-contentcarousel .wp-block{
+  display: inline-flex;
+}
+.wp-block-wwx-contentcarousel .editor-inner-blocks.block-editor-inner-blocks{
+  margin-bottom: 40px;
+}
+.wp-block-wwx-slide .wp-block, .wp-block-wwx-contentcarousel .block-editor-block-list__layout .block-editor-block-list__block .block-editor-block-list__block-edit {
+   min-width: 100%;
+   display: block;
+   white-space: normal;
+}
+.wp-block-wwx-contentcarousel .editor-block-list__layout.block-editor-block-list__layout .wp-block.editor-block-list__block.block-editor-block-list__block[data-type="wwx/slide"] {
+    vertical-align: top;
+}
+.wp-block-wwx-contentcarousel .editor-block-list__layout.block-editor-block-list__layout .wp-block.editor-block-list__block.block-editor-block-list__block[data-type="wwx/slide"]:nth-last-child(2){
+  margin-right: 60%;
+}
+.wp-block-wwx-contentcarousel .block-editor-block-list__block.is-multi-selected > .block-editor-block-mover, .wp-block-wwx-contentcarousel .block-editor-block-list__block > .block-editor-block-list__block-edit > .block-editor-block-mover{
+  top: 75%;
+  transform: rotate(-90deg);
+  left: 10px;
+}
+.wp-block-wwx-slide .block-editor-block-list__block.is-multi-selected > .block-editor-block-mover, .wp-block-wwx-slide .block-editor-block-list__block > .block-editor-block-list__block-edit > .block-editor-block-mover{
+  top: -15px;
+  transform: rotate(0);
+  left: -45px;
+}
+.wp-block-wwx-contentcarousel .block-list-appender .slide-appender {
+    background: #fff;
+    border: 1px solid gray;
+    padding: 10px 20px;
+    cursor: pointer;
+}

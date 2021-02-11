@@ -1,0 +1,360 @@
+.slick-slider
+{
+  position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list
+{
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
+
+    height: auto;
+
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+/* slick custom theme */
+.theme-dark svg.slick-arrow{
+  fill: #444;
+}
+
+.theme-light svg.slick-arrow{
+  fill: #fff;
+}
+.theme-light{
+  color: #fff
+}
+ /* Slider */
+ .slick-loading .slick-list
+ {
+     background: #fff url('./ajax-loader.gif') center center no-repeat;
+ }
+
+ /* Icons */
+
+ /* Arrows */
+ .slick-prev,
+ .slick-next
+ {
+     font-size: 0;
+     line-height: 0;
+
+     position: absolute;
+     top: 50%;
+
+     display: block;
+
+     width: 50px;
+     height: 50px; /*height should be double border*/
+     padding: 0;
+     -webkit-transform: translate(0, -50%);
+     -ms-transform: translate(0, -50%);
+     transform: translate(0, -50%);
+
+     cursor: pointer;
+
+     color: transparent;
+     z-index: 1;
+/*     border: none;
+     outline: none;
+     background: transparent;*/
+ }
+
+
+ .slick-prev:hover,
+ .slick-prev:focus,
+ .slick-next:hover,
+ .slick-next:focus
+ {
+     color: transparent;
+     outline: none;
+     background: transparent;
+ }
+
+
+ .slick-prev
+ {
+     left: -25px;
+ }
+ [dir='rtl'] .slick-prev
+ {
+     right: -25px;
+     left: auto;
+ }
+
+
+ .slick-next
+ {
+     right: -25px;
+ }
+ [dir='rtl'] .slick-next
+ {
+     right: auto;
+     left: -25px;
+ }
+@mixin arrowsizes($theme-name, $size){
+ .#{$theme-name} {
+   .slick-prev, .slick-next{
+     width: $size;
+     height: $size;
+   }
+   .slick-prev{
+       left: -$size;
+   }
+   [dir='rtl'] .slick-prev{
+       right: -$size;
+       left: auto;
+   }
+   .slick-next{
+       right: -$size;
+   }
+   [dir='rtl'] .slick-next{
+       right: auto;
+       left: -$size;
+   }
+ }
+ .alignfull.#{$theme-name} .slick-prev{
+   left: $size/2;
+ }
+ .alignfull.#{$theme-name} .slick-next{
+   right: $size/2;
+ }
+}
+
+@include arrowsizes(arrows-small, 40px );
+@include arrowsizes(arrows-medium, 60px );
+@include arrowsizes(arrows-large, 100px );
+@include arrowsizes(arrows-x-large, 150px );
+
+@mixin arrowbuttons($btn-theme, $background, $border, $fill, $borderradius){
+  .#{$btn-theme}.theme-dark {
+    .slick-prev, .slick-next{
+      background: $background;
+      border: 2px solid $border;
+      border-radius: $borderradius;
+    }
+    svg.slick-arrow{
+      fill: $fill;
+    }
+  }
+  .#{$btn-theme}.theme-light {
+    .slick-prev, .slick-next{
+      background: invert($background);
+      border: 2px solid invert($border);
+      border-radius: $borderradius;
+    }
+    svg.slick-arrow{
+      fill: invert($fill);
+    }
+  }
+
+}
+
+@include arrowbuttons(arrows-btn-circle, #444, #444, #fff, 50% );
+@include arrowbuttons(arrows-btn-circle-outline, transparent, #444, #444,  50%);
+@include arrowbuttons(arrows-btn-rounded, #444, #444 , #fff, 5px );
+@include arrowbuttons(arrows-btn-rounded-outline, transparent, #444, #444, 5px);
+@include arrowbuttons(arrows-btn-square, #444, #444 , #fff,  0 );
+@include arrowbuttons(arrows-btn-square-outline, transparent, #444, #444, 0);
+
+ /* Dots */
+ .slick-dotted.slick-slider, .entry-content .slick-dotted.slick-slider
+ {
+     margin-bottom: 30px;
+ }
+
+ .entry-content .slick-dots, .slick-dots
+ {
+     position: absolute;
+     bottom: -40px;
+     display: block;
+     width: 100%;
+     max-width: 100%;
+     padding: 0;
+     margin: 0;
+     list-style: none;
+     text-align: center;
+ }
+ .slick-dots li {
+     position: relative;
+     display: inline-block;
+     width: 20px;
+     height: 20px;
+     margin: 0 5px;
+     padding: 0;
+     cursor: pointer;
+     opacity: 0.7;
+ }
+ .slick-dots li.slick-active{
+   opacity: 1;
+ }
+ .slick-dots li button{
+     font-size: 0;
+     line-height: 0;
+     display: block;
+     width: 20px;
+     height: 20px;
+     padding: 5px;
+     cursor: pointer;
+     border: 2px solid;
+     outline: none;
+ }
+ .slick-dots li button:hover,
+ .slick-dots li button:focus {
+     outline: none;
+ }
+@mixin dotsizes($theme-name, $size){
+  .slick-dotted.slick-slider.#{$theme-name}, .entry-content .slick-dotted.slick-slider.#{$theme-name}{
+    margin-bottom: ($size*2)+10;
+  }
+ .#{$theme-name} {
+   .slick-dots li button, .slick-dots li{
+     width: $size;
+     height: $size;
+   }
+   .slick-dots li{
+     margin: 0 $size/4;
+   }
+   .slick-dots li button{
+     padding: $size/4;
+     border-width: $size/10;
+   }
+   .entry-content .slick-dots, .slick-dots{
+     bottom: -$size*2;
+   }
+ }
+}
+
+@include dotsizes(dots-small, 10px );
+@include dotsizes(dots-medium, 20px );
+@include dotsizes(dots-large, 40px );
+@include dotsizes(dots-x-large, 70px );
+
+
+@mixin dotshapes($class, $borderradius, $bordercolor, $background ){
+  .slick-dots.#{$class} {
+    li button{
+      border-radius: $borderradius;
+      border-color: $bordercolor;
+      background: $background;
+    }
+  }
+}
+
+.theme-dark{
+  @include dotshapes(default, 50%, #444, #444 );
+  @include dotshapes(outline, 50%, #444, transparent );
+  @include dotshapes(rounded, 5px, #444, #444 );
+  @include dotshapes(rounded-outline, 5px, #444, transparent );
+  @include dotshapes(squared, 0, #444, #444 );
+  @include dotshapes(squared-outline, 0, #444, transparent );
+}
+.theme-light{
+  @include dotshapes(default, 50%, #fff, #fff );
+  @include dotshapes(outline, 50%, #fff, transparent );
+  @include dotshapes(rounded, 5px, #fff, #fff );
+  @include dotshapes(rounded-outline, 5px, #fff, transparent );
+  @include dotshapes(squared, 0, #fff, #fff );
+  @include dotshapes(squared-outline, 0, #fff, transparent );
+}

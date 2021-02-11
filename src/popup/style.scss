@@ -1,0 +1,94 @@
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+
+ .wp-block-wwx-popup {
+     display: inline-block;
+     cursor: pointer;
+ }
+#popupwrapperoverlay .closepopup .close-x {
+  stroke: black;
+  fill: transparent;
+  stroke-linecap: round;
+  stroke-width: 2;
+}
+#popupwrapperoverlay .closepopup svg{
+  width: 30px
+}
+#popupwrapperoverlay .closepopup {
+    position: absolute;
+    top: 7px;
+    right: 12px;
+
+}
+#popupwrapperoverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99999999;
+}
+#popupwrapperoverlay::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: -1;
+    opacity: 0.8;
+}
+#popupwrapper {
+  position: relative;
+  background: #fff;
+  width: 50%;
+  margin: 10vh auto 0;
+  border-radius: 5px;
+  display: none;
+  max-height: 80vh;
+}
+.closepopup {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+#popuploader {
+    background: #fff;
+    display: block;
+    position: relative;
+    border-radius: 5px;
+    padding: 1%;
+    top: 20%;
+    margin: auto;
+    width: 101.6px;
+    height: 101.6px;
+}
+#popupwrapper .content {
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 40px 30px 30px;
+}
+#popupwrapper .content iframe{
+  width: 100%;
+  height: auto;
+  min-height: 50vh;
+}
+@media screen and (max-width:1025px){
+  #popupwrapper {
+      width: 95%;
+  }
+  #popupwrapper .content {
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 40px 10px 30px;
+}
+#popupwrapper .content iframe {
+    min-height: 63vh;
+}
+}
